@@ -1,0 +1,229 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  /* padding: 20px; */
+  /* max-width: 1400px; */
+  /* margin: auto; */
+}
+
+.container-margin {
+  padding: 20px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr; /* Cambiado */
+  grid-gap: 2rem;
+  margin-bottom: 9rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.personal-info {
+  padding: 0 3px;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.personal-info input[type="text"],
+input[type="tel"],
+input[type="email"] {
+  width: 100%;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+
+.menu-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-areas:
+    "image image"
+    "name checkbox"
+    "select select";
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto auto;
+  row-gap: 10px;
+}
+
+.menu-card img {
+  grid-area: image;
+  width: 100%;
+  height: 200px; /* Ajusta la altura de las imágenes */
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.menu-card-content {
+  grid-area: name;
+  /* Estilos adicionales que puedas necesitar para el contenido */
+}
+
+.menu-card-checkbox {
+  grid-area: checkbox;
+  justify-self: end;
+  align-self: center;
+}
+
+.menu-card-select {
+  grid-area: select;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre el 'Seleccionar' y el input */
+}
+
+/* Ajusta el estilo del checkbox para que aparezca al lado del precio */
+.menu-card input[type="checkbox"] {
+  margin-left: 5px; /* Espaciado entre el precio y la palomita */
+}
+
+/* Estilos específicos para el input de número dentro de .menu-card-select */
+.menu-card-select input[type="number"] {
+  width: 2rem; /* O podrías usar un valor específico como '3rem' si eso se ajusta mejor */
+  padding: 5px;
+  margin-left: 10px; /* Añade un poco de margen si es necesario para alinear con el diseño */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+header {
+  display: grid;
+  place-items: center; /* Centra el contenido en ambos ejes */
+  width: 100%; /* Ocupa todo el ancho */
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.logo {
+  max-width: 200px; /* O el tamaño que prefieras para tu logo */
+  height: auto; /* Mantiene la proporción del logo */
+}
+
+form div {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  width: 100%; /* Asegúrate de que el botón se expanda completamente */
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#orderConfirmation {
+  margin-top: 20px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 20%; /* Could be more or less, depending on screen size */
+  animation-name: slidein;
+  animation-duration: 0.5s;
+}
+
+@media (max-width: 575px) {
+  .modal-content {
+    width: 50%; /* Ajustado para pantallas medianas */
+  }
+}
+
+@media (min-width: 576px) {
+  .modal-content {
+    width: 50%; /* Ajustado para pantallas medianas */
+  }
+}
+
+@media (min-width: 992px) {
+  .modal-content {
+    width: 30%; /* Ajustado para pantallas grandes */
+  }
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add Animation */
+@keyframes slidein {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+footer {
+  background-color: #4caf50;
+  color: azure;
+  padding: 1rem;
+  text-align: center;
+}

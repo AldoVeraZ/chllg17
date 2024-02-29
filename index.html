@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ordena Comida en Línea</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header><img src="./logo/logo.png" alt="" class="logo" /></header>
+
+    <section class="container-margin">
+      <div class="container">
+        <!-- Columna para datos personales -->
+        <div class="personal-info">
+          <h1>Ordena tu Hamburguesa</h1>
+          <form id="orderForm">
+            <div>
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" name="nombre" required />
+            </div>
+            <div>
+              <label for="direccion">Dirección de Entrega:</label>
+              <input type="text" id="direccion" name="direccion" required />
+            </div>
+            <div>
+              <label for="telefono">Teléfono:</label>
+              <input type="tel" id="telefono" name="telefono" required />
+            </div>
+            <div>
+              <label for="email">Correo Electrónico:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <button type="submit">Enviar Pedido</button>
+          </form>
+          <div id="orderConfirmation"></div>
+        </div>
+
+        <!-- Columna para los menús de comida -->
+        <div class="menu" id="menuItems"></div>
+      </div>
+    </section>
+
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modalOrderConfirmation"></div>
+        <!-- ID cambiado aquí -->
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 BEASTFOOD</p>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
